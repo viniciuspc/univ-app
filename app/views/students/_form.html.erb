@@ -21,18 +21,29 @@
             <div class="input-field col s12">
               <%= f.text_field :email,
                   placeholder: "Enter your email address" %>
-              <%= f.label :email %>
+              <%= f.label :email, class: "active" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.password_field :password,
+                  placeholder: "Choose a password" %>
+              <%= f.label :password, class: "active" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.password_field :password_confirmation,
+                  placeholder: "Confirm password" %>
+              <%= f.label :password_confirmation, class: "active" %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <%= f.button :submit, 
                   class: "btn orange waves-effect waves-light right" do %>
-                <%if @student.new_record?%> 
-                  <i class='material-icons right'>send</i>Sign Up
-                <%else%>
-                  <i class='material-icons right'>send</i>Submit Updates
-                <%end%>
+                <i class='material-icons right'>send</i>
+                <%= @student.new_record? ? "Sign Up" : "Submit Updates" %>
               <%end%>
             </div>
           </div>
